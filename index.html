@@ -7,103 +7,25 @@
     <title>Document1</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
-    <style>
-        /* ----------banner---------- */
-        #banner {
-            width: 100%;
-            height: 100vh;
-            background-image: url('./img/banner.jpg');
-            background-size: cover;
-            background-position: top;
-            background-repeat: no-repeat;
-        }
-
-        /* ----------about-us---------- */
-        #about-us {
-            width: 100%;
-            height: 100vh;
-            background-image: url('./img/about.jpg');
-            /* background-position: center; */
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        #about-us .mask {
-            background-color: rgba(0, 0, 0, .5);
-        }
-
-        #about-us .mask .smallMask {
-            background-color: rgba(0, 0, 0, .7);
-        }
-
-        #about-us img {
-            width: 100%;
-        }
-
-        @media(max-width: 960px) {
-
-            #about-us .smallMask {
-                margin: 50px 0;
-            }
-
-            @media(max-width: 760px) {
-                #about-us .smallMask {
-                    background-color: unset;
-                }
-            }
-
-            #about-us {
-                height: unset;
-            }
-
-        }
-
-        /* ----------product-grill---------- */
-        #product-grill img {
-            width: 100%;
-        }
-
-        #product-grill {
-            width: 100%;
-            height: 700px;
-        }
-
-        @media(max-width: 960px) {
-            #product-grill {
-                height: unset;
-            }
-
-            #product-grill .card {
-                margin: 20px 0;
-            }
-
-            @media(max-width: 760px) {
-                #about-us .smallMask {
-                    background-color: unset;
-                }
-            }
-
-            #about-us {
-                height: unset;
-            }
-
-        }
-
-
-        /* ----------product-support---------- */
-        #product-support img{
-            width: 100%;
-        }
-
-    </style>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+   
 </head>
 
 <body>
 
     <section>
-        <div id="banner"></div>
+        <div class="navbar">
+            Test
+        </div>
+        
     </section>
+
+    <header>
+       
+        <div id="banner"></div>
+    </header>
+
 
     <section>
         <div id="about-us">
@@ -218,6 +140,33 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+
+
+    <!----------我是nav效果：滚轴up,nav出现；滚轴down,nav消失 ---------->
+    <script>
+
+        var lastScrollTop = 0;   //预设的滚轴高度
+
+        window.addEventListener("scroll", function (event) {    //监听事件
+            var nowScrollTop = window.pageYOffset || document.documentElement.scrollTop;   //不同浏览器侦测scrollTop的方法不同
+
+            if (nowScrollTop > lastScrollTop) {                                           //判断（现在滚轴高度 > 上一次滚轴高度时）
+                // downscroll code
+                // console.log("downscroll");
+                $(".navbar").removeClass("fixed");                                          //执行navbar钉在最上面
+            } else {                                                                         //否则，（现在滚轴高度 < 上一次滚轴高度时）
+                // upscroll code
+                // console.log("upscroll");
+                $(".navbar").addClass("fixed");                                              //执行navbar移除效果：钉在最上
+
+            }
+            lastScrollTop = nowScrollTop <= 0 ? 0 : nowScrollTop; // For Mobile or negative scrolling
+
+            //    lastScrollTop = nowScrollTop    代表  把现在滚轴的高度赋值给上一次滚轴的高度，这样边滚才能边找到上一次滚的值
+            //(   <= 0 ? 0 : st;   这一段是给手机用的，手机网上拉会出现多余的负的)
+            // console.log(lastScrollTop);
+        }, false);
+    </script>
 </body>
 
 </html>
