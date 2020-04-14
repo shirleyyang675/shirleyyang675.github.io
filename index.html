@@ -14,18 +14,61 @@
 
 <body>
 
-    <section>
-        <div class="navbar">
-            Test
-        </div>
-        
-    </section>
 
     <header>
        
+            <div id="nav-group">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <a class="navbar-brand" href="#">
+                        <img src="./img/logo.svg" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active mx-3">
+                                <a class="nav-link text-white" href="#">首頁 <span class="sr-only">(current)</span></a>
+                            </li>
+    
+                            <li class="nav-item mx-3">
+                                <a class="nav-link text-white" href="#">關於BigHome</a>
+                            </li>
+    
+                            <li class="nav-item dropdown mx-3">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    烤爐設備
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item text-white my-1" href="#">木顆粒烤爐</a>
+                                    <a class="dropdown-item text-white my-1" href="#">蛋型烟熏爐</a>
+                                    <a class="dropdown-item text-white my-1" href="#">木炭烤肉架</a>
+                                </div>
+                            </li>
+    
+                            <li class="nav-item mx-3">
+                                <a class="nav-link text-white" href="#">產品支援</a>
+                            </li>
+    
+                            <li class="nav-item mx-3">
+                                <a class="nav-link text-white" href="#">美味食譜</a>
+                            </li>
+    
+                            <li class="nav-item mx-3">
+                                <a class="nav-link text-white" href="#">聯絡我們</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+       
+       
         <div id="banner"></div>
     </header>
-
 
     <section>
         <div id="about-us">
@@ -153,11 +196,11 @@
             if (nowScrollTop > lastScrollTop) {                                           //判断（现在滚轴高度 > 上一次滚轴高度时）
                 // downscroll code
                 // console.log("downscroll");
-                $(".navbar").removeClass("fixed");                                          //执行navbar钉在最上面
+                $("#nav-group").removeClass("fixed");                                          //执行navbar钉在最上面
             } else {                                                                         //否则，（现在滚轴高度 < 上一次滚轴高度时）
                 // upscroll code
                 // console.log("upscroll");
-                $(".navbar").addClass("fixed");                                              //执行navbar移除效果：钉在最上
+                $("#nav-group").addClass("fixed");                                              //执行navbar移除效果：钉在最上
 
             }
             lastScrollTop = nowScrollTop <= 0 ? 0 : nowScrollTop; // For Mobile or negative scrolling

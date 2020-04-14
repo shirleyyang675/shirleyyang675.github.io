@@ -1,12 +1,31 @@
-.navbar {
-    position: absolute;
-    color: white;
-}
 
-.navbar.fixed {
+
+
+
+/* ----------navbar---------- */
+
+#nav-group.fixed {
     position: fixed;
 }
 
+.navbar-brand img {
+    width: 100px;
+    height: 100px;
+}
+
+#nav-group{
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%,  rgba(0,0,0,0) 100%);
+    font-size: 20px;
+    position: absolute;
+}
+
+.dropdown-menu{
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.dropdown-item:focus, .dropdown-item:hover{
+    background-color: rgba(0, 0, 0, .7);
+}
 
 
 /* ----------banner---------- */
