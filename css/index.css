@@ -6,6 +6,11 @@
 
 #nav-group.fixed {
     position: fixed;
+    z-index: 999;
+}
+
+.navbar{
+    padding:30px 50px;
 }
 
 .navbar-brand img {
@@ -14,7 +19,7 @@
 }
 
 #nav-group{
-    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%,  rgba(0,0,0,0) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%,  rgba(0,0,0,0) 100%);
     font-size: 20px;
     position: absolute;
     width: 100%;
@@ -26,6 +31,24 @@
 
 .dropdown-item:focus, .dropdown-item:hover{
     background-color: rgba(0, 0, 0, .7);
+}
+
+
+@media(max-width:992px){
+    .navbar{
+        justify-content: center;
+
+    }
+
+    .navbar-brand{
+        margin: auto;
+    }
+
+    .navbar-toggler{
+        position: absolute;
+        top: 50px;
+        right: 20px;
+    }
 }
 
 
@@ -61,13 +84,13 @@
     width: 100%;
 }
 
-@media(max-width: 960px) {
+@media(max-width: 992px) {
 
     #about-us .smallMask {
         margin: 50px 0;
     }
 
-    @media(max-width: 760px) {
+    @media(max-width: 768px) {
         #about-us .smallMask {
             background-color: unset;
         }
@@ -86,10 +109,10 @@
 
 #product-grill {
     width: 100%;
-    height: 700px;
+    height: 1000px;
 }
 
-@media(max-width: 960px) {
+@media(max-width: 992px) {
     #product-grill {
         height: unset;
     }
@@ -98,7 +121,7 @@
         margin: 20px 0;
     }
 
-    @media(max-width: 760px) {
+    @media(max-width: 768px) {
         #about-us .smallMask {
             background-color: unset;
         }
@@ -108,6 +131,10 @@
         height: unset;
     }
 
+}
+
+.container-fluid{
+   padding: 0 60px;
 }
 
 
